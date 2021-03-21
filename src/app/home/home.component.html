@@ -1,17 +1,25 @@
 <div>
-  <button mat-raised-button color="primary" (click)="commit()">Select a local Repo</button>
-  <input type="file" (change)="onFolderSelected($event)" webkitdirectory multiple/>
+  <!--<button mat-raised-button color="primary" (click)="commit()">Select a local Repo</button>-->
+  
+  <button mat-raised-button (click)="openInput()" color="primary" for="upload"> 
+    <span>Select Repository</span>
+    <input type="file" id="upload" (change)="onFolderSelected($event)" webkitdirectory multiple style="display:none;"/>
+  </button>
+
+  <p style="padding: 20px; margin: 10px;">{{path}}</p>
   <h2>Git Commit</h2>
+  
   <form class="example-form">
     <mat-form-field class="example-full-width">
-      <mat-label>Title</mat-label>
-      <input matInput placeholder="message..." [(ngModel)]="title">
+      <mat-label>Summary</mat-label>
+      <input matInput placeholder="" [(ngModel)]="title">
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
       <mat-label>Description</mat-label><br>
-      <textarea matInput placeholder="description..." [(ngModel)]="description"></textarea>
+      <textarea matInput placeholder="" [(ngModel)]="description"></textarea>
     </mat-form-field>
     <button mat-raised-button color="primary" (click)="commit()">Commit</button>
+    <button mat-raised-button color="primary" (click)="push()">Push</button>
   </form>  
 </div>

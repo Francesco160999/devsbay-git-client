@@ -10,8 +10,9 @@ import GitCommands from '../../utilities/git-commands.utility';
 })
 export class HomeComponent implements OnInit {
 
-  public title: string;
-  public description: string;
+  public title: string = "";
+  public description: string = "";
+  public path: string = "No selected repository...";
   
   private git: GitCommands;
 
@@ -26,10 +27,20 @@ export class HomeComponent implements OnInit {
     this.git.commit(this.title, this.description);
   }
 
+  public push(){
+    this.git.push(false);
+  }
+
   public onFolderSelected(event){
-    GitCommands.GIT_PROJECT_PATH = event.target.baseURI.replace("file://","");
-    console.log(event);
+    var path = event.target.files[0].path;
+
+    this.path = path;
+    GitCommands.GIT_PROJECT_PATH = path;
     console.log(GitCommands.GIT_PROJECT_PATH); 
+  }
+
+  public openInput(){ 
+    document.getElementById("upload").click();
   }
 
 }
