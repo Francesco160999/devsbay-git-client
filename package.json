@@ -1,11 +1,11 @@
 {
   "name": "angular-electron",
-  "version": "9.0.6",
+  "version": "0.1.0",
   "description": "Angular 11 with Electron (Typescript + SASS + Hot Reload)",
   "homepage": "https://github.com/maximegris/angular-electron",
   "author": {
-    "name": "Maxime GRIS",
-    "email": "maxime.gris@gmail.com"
+    "name": "Francesco Scassillo",
+    "email": "scassillofrancesco@gmail.com"
   },
   "keywords": [
     "angular",
@@ -41,7 +41,12 @@
     "lint": "ng lint"
   },
   "dependencies": {
-    "@electron/remote": "1.0.4"
+    "@angular/animations": "^11.0.0 || ^12.0.0-0",
+    "@angular/cdk": "11.2.5",
+    "@angular/forms": "^11.0.0 || ^12.0.0-0",
+    "@angular/material": "11.2.5",
+    "@electron/remote": "1.0.4",
+    "ngx-childprocess": "0.0.6"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "11.1.1",

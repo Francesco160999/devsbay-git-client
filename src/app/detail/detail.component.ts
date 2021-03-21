@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChildProcessService } from 'ngx-childprocess';
+import GitCommands from '../../utilities/git-commands.utility';
 
 @Component({
   selector: 'app-detail',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+  private git: GitCommands;
+
+  constructor(private childProcessService: ChildProcessService) {
+    this.git = new GitCommands(childProcessService);
+    this.git.commit("test", "test");
+   }
 
   ngOnInit(): void { }
 

@@ -1,6 +1,7 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "experimentalDecorators": true,
     "outDir": "../out-tsc/app",
     "module": "es2015",
     "baseUrl": "",
@@ -18,6 +19,7 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
-    "preserveWhitespaces": true
+    "preserveWhitespaces": true,
+    "experimentalDecorators": true
   }
 }
