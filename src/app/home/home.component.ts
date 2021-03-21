@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void { }
 
   public commit(){
-    this.git.commit("title", "description");
+    this.git.commit(this.title, this.description);
   }
 
 }

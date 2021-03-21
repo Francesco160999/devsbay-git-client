@@ -9,7 +9,7 @@ export default class GitCommands {
     static GIT_PROJECT_PATH: string = "";
 
     constructor(private childProcessService: ChildProcessService) { 
-        
+
     }
 
     private execute(command: string): any {
@@ -18,7 +18,6 @@ export default class GitCommands {
     }
 
     public commit(title: string, description: string): any {
-        console.log("ciao")
         return this.execute(`git commit -m "${title}" -m "${description}"`);
     }
 

@@ -1,14 +1,15 @@
 <div>
+  <button mat-raised-button color="primary" (click)="commit()">Select a local Repo</button>
   <h2>Git Commit</h2>
   <form class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>Title</mat-label>
-      <input matInput placeholder="message..." [ngModel]="title">
+      <input matInput placeholder="message..." [(ngModel)]="title">
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
       <mat-label>Description</mat-label>
-      <textarea matInput placeholder="description..." [ngModel]="description"></textarea>
+      <textarea matInput placeholder="description..." [(ngModel)]="description"></textarea>
     </mat-form-field>
     <button mat-raised-button color="primary" (click)="commit()">Commit</button>
   </form>  
