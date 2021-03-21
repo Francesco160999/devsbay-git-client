@@ -12,16 +12,23 @@ export default class GitCommands {
 
     }
 
-    private execute(command: string): any {
+    private execute(commands: string[]): any {
         let options: string[] = [];
+        let command: string = "";
+        for(let cmd of commands){
+            command += (command.length == 0 ? '':' && ') + cmd;
+        }
         return this.childProcessService.childProcess.exec(command, options, (data) => {console.log(data)});
     }
 
     public commit(title: string, description: string): any {
-        return this.execute(`git commit -m "${title}" -m "${description}"`);
+        return this.execute([
+            'git add -A',
+            `git commit -m "${title}" -m "${description}"`
+        ]);
     }
 
     public push(force: boolean): any{
-        return this.execute(`git push ${force?'-f':''}`);
+        return this.execute([`git push ${force?'-f':''}`]);
     }
 }
