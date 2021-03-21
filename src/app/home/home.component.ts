@@ -25,16 +25,12 @@ export class HomeComponent implements OnInit {
 
   public commit(){
     let res = this.git.commit(this.title, this.description);
-    if(res == null){
-      alert("1 Commit Staged");
-    }
+    console.log(res);
   }
 
   public push(){
     let res = this.git.push(false);
-    if(res == null){
-      alert("Commit/s Pushed");
-    }
+    console.log(res);
   }
 
   public onFolderSelected(event){

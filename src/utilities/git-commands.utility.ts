@@ -28,7 +28,7 @@ export default class GitCommands {
         ]);
     }
 
-    public push(force: boolean): any{
+    public push(force: boolean = false): any{
         return this.execute([`git push ${force?'-f':''}`]);
     }
 }
