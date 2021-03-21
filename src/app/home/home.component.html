@@ -1,9 +1,10 @@
 <div>
   <button mat-raised-button color="primary" (click)="commit()">Select a local Repo</button>
+  <input type="file" (change)="onFolderSelected($event)" webkitdirectory multiple/>
   <h2>Git Commit</h2>
   <form class="example-form">
     <mat-form-field class="example-full-width">
-      <mat-label>Title</mat-label><br>
+      <mat-label>Title</mat-label>
       <input matInput placeholder="message..." [(ngModel)]="title">
     </mat-form-field>
   

@@ -26,4 +26,10 @@ export class HomeComponent implements OnInit {
     this.git.commit(this.title, this.description);
   }
 
+  public onFolderSelected(event){
+    GitCommands.GIT_PROJECT_PATH = event.target.baseURI.replace("file://","");
+    console.log(event);
+    console.log(GitCommands.GIT_PROJECT_PATH); 
+  }
+
 }

@@ -14,7 +14,7 @@ export default class GitCommands {
 
     private execute(commands: string[]): any {
         let options: string[] = [];
-        let command: string = "";
+        let command: string = "cd " + GitCommands.GIT_PROJECT_PATH;
         for(let cmd of commands){
             command += (command.length == 0 ? '':' && ') + cmd;
         }
